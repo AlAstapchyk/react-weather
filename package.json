@@ -1,12 +1,13 @@
 {
-  "name": "forecast-new",
+  "name": "react-weather",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alastapchyk.github.io/react-weather",
+  "homepage": "https://AlAstapchyk.github.io/react-weather",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "gh-pages": "^5.0.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
