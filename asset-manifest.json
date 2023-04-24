@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-weather/static/css/main.218b45ee.css",
+    "main.js": "/react-weather/static/js/main.523ce8a4.js",
+    "static/media/bg-image-forecast.jpg": "/react-weather/static/media/bg-image-forecast.4ac9c6adeb10b25e24be.jpg",
+    "index.html": "/react-weather/index.html",
+    "main.218b45ee.css.map": "/react-weather/static/css/main.218b45ee.css.map",
+    "main.523ce8a4.js.map": "/react-weather/static/js/main.523ce8a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.218b45ee.css",
+    "static/js/main.523ce8a4.js"
+  ]
+}
