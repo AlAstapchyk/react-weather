@@ -1,0 +1,50 @@
+@import '../../styles/shared.scss';
+
+.geolocation__block {
+    @extend .block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.cities__block {
+    @extend .block;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+
+    .cities__city-name{
+        margin: auto;
+    }
+    button {
+        margin: 1rem auto 0;
+    }
+
+    .cities__remote {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        img {
+            height: 24rem;
+            border-radius: 1.5rem;
+            @extend .nonselectable;
+        }
+        svg {
+            margin: 1.5rem;
+            border-radius: 50%;
+            height: 4rem;
+            box-shadow: $shadow;
+            fill: white;
+
+            &:hover {
+                background-color: white;
+            }
+            &:active {
+                fill: black;
+            }
+        }
+    }
+}
