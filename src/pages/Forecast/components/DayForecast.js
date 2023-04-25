@@ -21,7 +21,7 @@ const DayForecast = ({forecast, currentWeather}) => {
             <p className="text--small">
               {pop >= 0.3 && pop <= 0.9 ? `${Math.round(pop*10)*10}%` : pop < 0.1 ? <br/> : '>90%'}
             </p>
-            <img src={process.env.PUBLIC_URL + `images/icons/${icon}.png`} alt={icon} />
+            <img src={process.env.PUBLIC_URL + `/images/icons/${icon}.png`} alt={icon} />
             <p>{Math.round(temp)}°C</p>
           </div>
         );

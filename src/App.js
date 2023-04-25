@@ -7,8 +7,8 @@ function App() {
     <div className="app">
       <div className="body__container">
         <Routes>
-          <Route path="/forecast" element={<Forecast />}/>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/react-weather/forecast" element={<Forecast />}/>
+          <Route path="/react-weather/" element={<Home/>}/>
         </Routes>
       </div>
     </div>

@@ -170,7 +170,7 @@ const Cities = () => {
 
   const goToForecast = () => {
     navigate({
-      pathname: '/forecast',
+      pathname: '/react-weather/forecast',
       search: `?lat=${citiesArr[randomNumbers[currentImageIndex]].latitude}&lon=${citiesArr[randomNumbers[currentImageIndex]].longitude}`,
     });
   }

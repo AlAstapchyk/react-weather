@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
-      <Link to="/">Home page</Link>
+      <Link to="/react-weather">Home page</Link>
 
       <div className="rights" align="center">
         <p className="text--small">Data from OpenWeather</p>

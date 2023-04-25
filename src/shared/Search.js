@@ -27,7 +27,7 @@ const Search = () => {
     console.log(searchData);
 
     navigate({
-      pathname: '/forecast',
+      pathname: '/react-weather/forecast',
       search: `?lat=${searchData.value.lat}&lon=${searchData.value.lon}`,
     });
   };

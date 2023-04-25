@@ -1,21 +1,20 @@
 {
   "name": "react-weather",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://AlAstapchyk.github.io/react-weather",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "gh-pages": "^5.0.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-select-async-paginate": "^0.7.2",
-    "sass": "^1.60.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^3.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,7 +43,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^7.0.3",
+    "sass": "^1.62.0",
     "sass-loader": "^13.2.2"
   }
 }

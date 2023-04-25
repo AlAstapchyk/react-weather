@@ -8,7 +8,7 @@ const Geolocation = () => {
       navigator.geolocation.getCurrentPosition(
         (position) => {
             navigate({
-                pathname: '/forecast',
+                pathname: '/react-weather/forecast',
                 search: `?lat=${position.coords.latitude}&lon=${position.coords.longitude}`,
               });
           
