@@ -1,8 +1,5 @@
-@import '../../styles/shared.scss';
+@import "../../styles/shared.scss";
 
-.search-city {
-  margin-top: 1rem;
-}
 .header {
   padding-inline: 1.5rem;
   display: flex;
@@ -46,30 +43,34 @@
   }
   .day-forecast__subblock {
     display: inline-block;
-    width: 6rem;
+    width: 5.25rem;
 
     p {
-    text-align: center;
+      text-align: center;
     }
     img {
-    display: block;
-    margin: 0 auto;
-    @extend .icon--medium
+      display: block;
+      margin: 0 auto;
+      @extend .icon--medium;
     }
   }
   .day-forecast__separator {
     display: flex;
-    width: 2.5rem;
+    width: 2rem;
 
-    .day-forecast__separator__line{
+    .day-forecast__separator__line {
       display: inline-block;
       width: 0px;
       height: 100%;
       border: 2px solid transparent;
-      border-image: linear-gradient(to top, rgba(white, 0%), white); /* Apply a linear gradient as the border image */
-      border-image-slice: 1; 
+      border-image: linear-gradient(
+        to top,
+        rgba(white, 0%),
+        white
+      ); /* Apply a linear gradient as the border image */
+      border-image-slice: 1;
     }
-    .day-forecast__separator__date{
+    .day-forecast__separator__date {
       display: inline-block;
       margin: 0.3rem;
       writing-mode: vertical-lr;
@@ -83,10 +84,9 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 0.5rem;
 
-  p{
+  p {
     margin-block: 0.2rem;
   }
-
   .add-info-weather__block--small {
     @extend .block;
     display: flex;
@@ -103,21 +103,23 @@
   }
 }
 
-.under-sun-direct__div {
-  display: flex;
-  justify-content: space-between;
-}
-
 .add-info-weather__day-light-hours {
-  height: 100%;
-  width: 28rem;
-}
+  width: 25rem;
+  padding-bottom: 1.5rem;
 
-.sun-direct__svg circle{
-  animation-name: rotateAnimation; /* Name of the animation */
-  animation-duration: 60s; /* Duration of the animation */
-  animation-timing-function: linear; /* Timing function for the animation */
-  animation-iteration-count: infinite; /* Number of times the animation repeats */
+  .sun-direct__svg {
+    height: 14.5rem;
+    circle {
+      animation-name: rotateAnimation; /* Name of the animation */
+      animation-duration: 60s; /* Duration of the animation */
+      animation-timing-function: linear; /* Timing function for the animation */
+      animation-iteration-count: infinite; /* Number of times the animation repeats */
+    }
+  }
+  .under-sun-direct__div {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 @keyframes rotateAnimation {
@@ -127,4 +129,19 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+@media (max-width: 1050px) {
+  .add-info-weather__day-light-hours {
+    width: 21rem !important;
+    padding-bottom: 1.5rem;
+    margin: auto;
+  
+    .sun-direct__svg {
+      height: 12rem !important;
+    }
+  }
+}
+@media (max-width: 808px) {
+   
 }

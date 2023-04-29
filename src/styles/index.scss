@@ -9,21 +9,18 @@ p {
 .horizontal-view {
   display: inline-flex;
 }
-svg { 
-  text-shadow:  $shadow;
-}
 
 //----------------------------------------------------------------
 
 body {
-  background-image: url("../../public/images/bg-image-forecast.jpg");
+  background-image: url("../../public/images/bg-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
   height: 100%;
   width: 100%;
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
   &::-webkit-scrollbar {
     overflow-x: scroll;
@@ -59,7 +56,7 @@ body {
 }
 @media (max-width: 1050px) {
   .body__container {
-    max-width: 800px;
+    max-width: 808px;
     margin-inline: 50px;
     margin-inline: auto;
   }

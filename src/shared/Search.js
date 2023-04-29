@@ -1,9 +1,12 @@
 import { AsyncPaginate } from "react-select-async-paginate";
 import { geoApiOptions, GEO_API_URL } from "../api/geoDB";
 import { useNavigate } from "react-router-dom";
+//import { useMediaQuery } from "@material-ui/core";
 
-const Search = () => {
+const Search = ( {isHome = true} ) => {
   const navigate = useNavigate();
+  console.log("isHome: ");
+  console.log(isHome);
 
   const loadOptions = (inputValue) => {
     return fetch(GEO_API_URL + inputValue + "&limit=10", geoApiOptions)
@@ -36,16 +39,14 @@ const Search = () => {
     control: (styles) => ({
       ...styles,
       backgroundColor: "white",
-      fontSize: "2rem",
+      fontSize: "1.75rem",
       borderRadius: "1.5rem",
-      minHeight: "5rem",
-      msScrollbarTrackColor: "red",
+      minHeight: "4.5rem",
     }),
     option: (styles, state) => ({
       ...styles,
       borderRadius: "1rem",
       backgroundColor: state.isFocused && "black",
-      maxHeight: "20rem",
     }),
     menu: (styles) => ({
       ...styles,
@@ -55,12 +56,12 @@ const Search = () => {
       backgroundColor: "rgba(0,0,0,0.4)",
       color: "white",
       textShadow: "2px 2px black",
-      fontSize: "1.5rem",
+      fontSize: "1.25rem",
       paddingRight: "0px",
     }),
     menuList: (styles) => ({
       ...styles,
-      maxHeight: "20rem",
+      maxHeight: (isHome ? "11.25rem" : "15.25rem"),
 
       "&::-webkit-scrollbar": {
         width: "10px",

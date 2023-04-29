@@ -18,8 +18,8 @@ const Footer = () => {
             fill="white"
             version="1.1"
             id="Capa_1"
-            width="2.5rem"
-            height="2.5rem"
+            width="2.25rem"
+            height="2.25rem"
             viewBox="0 0 552.77 552.77"
           >
             <g>
@@ -46,7 +46,7 @@ const Footer = () => {
           </svg>
         </a>
         <a href="https://github.com/AlAstapchyk" target="_blank">
-          <svg width="2.5rem" height="2.5rem" viewBox="0 0 20 20">
+          <svg width="2.25rem" height="2.25rem" viewBox="0 0 20 20">
             <g
               id="Page-1"
               stroke="none"

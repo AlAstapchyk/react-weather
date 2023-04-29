@@ -21,7 +21,7 @@ function Forecast() {
 
   return (
     <>
-      <Search />
+      <Search isHome={false}/>
 
       {currentWeather != null && currentWeather != null && (
         <>

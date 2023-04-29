@@ -1,36 +1,31 @@
 const AdditionalInfo = ({ forecast, currentWeather }) => {
   const timePart = currentWeather.sys.sunset - currentWeather.sys.sunrise;
-  const timePos = currentWeather.dt - currentWeather.sys.sunrise; 
+  const timePos = currentWeather.dt - currentWeather.sys.sunrise;
 
   const SunSvg = () => {
-    const pos = 180 * timePos/timePart;
-    const sunTransform = `scale(2, 2) rotate(${pos} 0 64) translate(112 180)`;
+    const pos = (180 * timePos) / timePart;
+    const sunTransform = `rotate(${pos} 0 0) translate(-45 70) scale(0.8 0.8)`;
 
     return (
-      <svg
-        height="16rem"
-        width="100%"
-        className="sun-direct__svg"
-      >
+      <svg className="sun-direct__svg" viewBox="0 0 100 100" width="100%">
         <circle
-          cx="50%"
-          cy="100%"
-          r="12.5rem"
+          cx="50"
+          cy="100"
+          r="75"
           stroke="white"
-          stroke-width="3"
-          stroke-dasharray="33, 10"
+          stroke-width="1"
+          stroke-dasharray="15, 3"
           fill="none"
-          transform-origin="50% 100%"
+          transform-origin="50 100"
         />
         <path
-          className="add-info-weather__sun"
           d="M12 4V2M12 20V22M6.41421 6.41421L5 5M17.728 17.728L19.1422 19.1422M4 12H2M20 12H22M17.7285 6.41421L19.1427 5M6.4147 17.728L5.00049 19.1422M12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17Z"
           stroke="white"
-          stroke-width="2"
+          stroke-width="1.3"
           stroke-linecap="round"
           stroke-linejoin="round"
           fill="none"
-          transform-origin="center"
+          transform-origin="50 100"
           transform={sunTransform}
         />
       </svg>
@@ -38,18 +33,22 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
   };
 
   const timeFormat = (unix, isTimeZone = true) => {
-    const date = new Date((unix + (isTimeZone ? currentWeather.timezone : 0))*1000)
-    return date.getUTCHours().toString().padStart(2, "0")
-      + ":"
-      + date.getUTCMinutes().toString().padStart(2, "0");
-  }
+    const date = new Date(
+      (unix + (isTimeZone ? currentWeather.timezone : 0)) * 1000
+    );
+    return (
+      date.getUTCHours().toString().padStart(2, "0") +
+      ":" +
+      date.getUTCMinutes().toString().padStart(2, "0")
+    );
+  };
 
   return (
     <div className="add-info-weather">
       <div className="add-info-weather__block--small">
         <svg
-          width="4rem"
-          height="4rem"
+          width="3.5rem"
+          height="3.5rem"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -71,8 +70,8 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
 
       <div className="add-info-weather__block--small">
         <svg
-          width="4rem"
-          height="4rem"
+          width="3.5rem"
+          height="3.5rem"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -107,8 +106,8 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
 
       <div className="add-info-weather__block--small">
         <svg
-          width="4rem"
-          height="4rem"
+          width="3.5rem"
+          height="3.5rem"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -132,8 +131,8 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
         <svg
           className="icon-medium"
           fill="#000000"
-          height="4rem"
-          width="4rem"
+          height="3.5rem"
+          width="3.5rem"
           version="1.1"
           id="Layer_1"
           viewBox="0 0 512 512"
@@ -184,19 +183,23 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
 
       <div className="add-info-weather__block--half">
         <div className="add-info-weather__day-light-hours">
-          <SunSvg/>
+          <SunSvg />
           <div className="under-sun-direct__div">
             <div>
               <p className="text--small">Sunrise</p>
-              <p className="sunrise__time" align="center">{timeFormat(currentWeather.sys.sunrise)}</p>
+              <p className="sunrise__time" align="center">
+                {timeFormat(currentWeather.sys.sunrise)}
+              </p>
             </div>
             <div>
-            <p className="text--small">Daylight hours</p>
-            <p align="center">{timeFormat(timePart, false)}</p>
+              <p className="text--small">Daylight hours</p>
+              <p align="center">{timeFormat(timePart, false)}</p>
             </div>
             <div>
               <p className="text--small">&nbsp;Sunset</p>
-              <p className="sunset__time" align="center">{timeFormat(currentWeather.sys.sunset)}</p>
+              <p className="sunset__time" align="center">
+                {timeFormat(currentWeather.sys.sunset)}
+              </p>
             </div>
           </div>
         </div>

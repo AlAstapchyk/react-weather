@@ -11,7 +11,6 @@ const Geolocation = () => {
                 pathname: '/react-weather/forecast',
                 search: `?lat=${position.coords.latitude}&lon=${position.coords.longitude}`,
               });
-          
         },
         (error) => console.error(error)
       );
