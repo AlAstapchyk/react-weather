@@ -108,3 +108,15 @@ header {
         }
     }
 }
+
+@media (max-width: 468px) {
+    header {
+        height: 7.5rem;
+        display: flex;
+
+        .text--large {
+            align-self: center;
+            font-size: 1.75rem !important;
+        }
+    }
+}
