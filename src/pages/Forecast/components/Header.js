@@ -26,33 +26,22 @@ const Header = ({ currentWeather }) => {
     );
   };
 
-  const timeFormat = (unix, isTimeZone = true) => {
-    const date = new Date(
-      (unix + (isTimeZone ? currentWeather.timezone : 0)) * 1000
-    );
-    return (
-      date.getUTCHours().toString().padStart(2, "0") +
-      ":" +
-      date.getUTCMinutes().toString().padStart(2, "0")
-    );
-  };
-
   return (
     <>
       <div className="header">
         <div className="header__left">
-          <p className="text--large">
+          <p className="text--large header__place">
             {currentWeather.name ? currentWeather.name + ", " : "Unknown"}{" "}
             {currentWeather.sys.country}
           </p>
-          <p className="text--large">{printDate(currentWeather.dt)}</p>
-          <p className="text--large">{currentWeather.weather[0].main}</p>
+          <p className="text--large header__date">{printDate(currentWeather.dt)}</p>
+          <p className="text--large header__brief">{currentWeather.weather[0].main}</p>
         </div>
         <div className="header__right">
-          <p className="text--superlarge">
+          <p className="text--superlarge header__temp">
             {Math.round(currentWeather.main.temp)}°C
           </p>
-          <p className="text--large">
+          <p className="text--large header__feel">
             Feels like {Math.round(currentWeather.main.feels_like)}°C
           </p>
         </div>

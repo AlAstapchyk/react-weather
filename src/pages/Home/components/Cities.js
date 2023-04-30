@@ -170,15 +170,18 @@ const Cities = () => {
 
   const goToForecast = () => {
     navigate({
-      pathname: '/react-weather/forecast',
-      search: `?lat=${citiesArr[randomNumbers[currentImageIndex]].latitude}&lon=${citiesArr[randomNumbers[currentImageIndex]].longitude}`,
+      pathname: "/react-weather/forecast",
+      search: `?lat=${
+        citiesArr[randomNumbers[currentImageIndex]].latitude
+      }&lon=${citiesArr[randomNumbers[currentImageIndex]].longitude}`,
     });
-  }
+  };
 
   return (
     <div className="cities__block">
       <div className="cities__remote">
         <svg
+          className="cities__left-button"
           onClick={handleLeftClick}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
@@ -196,6 +199,7 @@ const Cities = () => {
           }
         />
         <svg
+          className="cities__right-button"
           onClick={handleRightClick}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
@@ -211,8 +215,10 @@ const Cities = () => {
         {randomNumbers.length !== 0 &&
           citiesArr[randomNumbers[currentImageIndex]].country}
       </p>
-      
-      <button className="button--simple" onClick={goToForecast}><p>Check the weather in that city</p></button>
+
+      <button className="button--simple" onClick={goToForecast}>
+        <p>Check the weather in that city</p>
+      </button>
     </div>
   );
 };

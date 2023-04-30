@@ -1,25 +1,28 @@
 @import "../../styles/shared.scss";
 
 .header {
-  padding-inline: 1.5rem;
+  padding-inline: var(--brad);
   display: flex;
   justify-content: center;
+
+  .header__left {
+    width: 55%;
+    display: inline-block;
+  }
+  .header__right {
+    width: 45%;
+    display: inline-block;
+    text-align: right;
+    justify-content: center;
+  }
 }
-.header__left {
-  width: 55%;
-  display: inline-block;
-}
-.header__right {
-  width: 45%;
-  display: inline-block;
-  text-align: right;
-  justify-content: center;
-}
+
 .above-block {
   @extend .text--big;
-  padding-left: 1.5rem;
+  padding-left: var(--brad);
   margin: 1rem 0 0.5rem 0;
 }
+
 .day-forecast__block {
   @extend .block;
   overflow-x: scroll;
@@ -63,11 +66,7 @@
       width: 0px;
       height: 100%;
       border: 2px solid transparent;
-      border-image: linear-gradient(
-        to top,
-        rgba(white, 0%),
-        white
-      ); /* Apply a linear gradient as the border image */
+      border-image: linear-gradient(to top, rgba(white, 0%), white);
       border-image-slice: 1;
     }
     .day-forecast__separator__date {
@@ -92,8 +91,13 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: var(--brad);
     align-items: center;
+
+    svg {
+      height: 3.5rem;
+      width: 3.5rem;
+    }
   }
   .add-info-weather__block--half {
     grid-area: 1 / 3 / span 2 / span 2;
@@ -101,19 +105,38 @@
     justify-content: center;
     @extend .block;
   }
+
+  .add-info-weather__day-light-hours {
+    width: 25rem;
+    padding-bottom: var(--brad);
+  
+    .sun-direct__svg {
+      height: 14.5rem;
+      circle {
+        animation-name: rotateAnimation;
+        animation-duration: 60s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    }
+    .under-sun-direct__div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
 
 .add-info-weather__day-light-hours {
   width: 25rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: var(--brad);
 
   .sun-direct__svg {
     height: 14.5rem;
     circle {
-      animation-name: rotateAnimation; /* Name of the animation */
-      animation-duration: 60s; /* Duration of the animation */
-      animation-timing-function: linear; /* Timing function for the animation */
-      animation-iteration-count: infinite; /* Number of times the animation repeats */
+      animation-name: rotateAnimation;
+      animation-duration: 60s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
     }
   }
   .under-sun-direct__div {
@@ -134,14 +157,112 @@
 @media (max-width: 1050px) {
   .add-info-weather__day-light-hours {
     width: 21rem !important;
-    padding-bottom: 1.5rem;
+    padding-bottom: var(--brad);
     margin: auto;
-  
+
     .sun-direct__svg {
       height: 12rem !important;
     }
   }
 }
 @media (max-width: 808px) {
-   
+  .add-info-weather {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    .add-info-weather__block--half {
+      grid-area: 3 / 1 / span 2 / span 2;
+    }
+  }
+  .add-info-weather__day-light-hours {
+    width: 25rem !important;
+    padding-bottom: var(--brad);
+    margin-block: 0;
+
+    .sun-direct__svg {
+      height: 14.5rem !important;
+    }
+  }
+}
+
+@media (max-width: 648px) {
+  .day-forecast__block {
+    .day-forecast__subblock {
+      width: 4.25rem;
+    }
+    .day-forecast__separator {
+      width: 1.75rem;
+
+      .day-forecast__separator__date {
+        margin: 0.3rem;
+      }
+    }
+  }
+  .add-info-weather {
+    gap: var(--gap);
+
+    .add-info-weather__block--small {
+      svg {
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 468px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+
+    .header__left {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      //gap: 0.5rem;
+
+      .header__place {
+        justify-self: left;
+        font-size: 1.25rem;
+        margin-block: 0.5rem;
+      }
+      .header__date {
+        justify-self: right;
+        font-size: 1.25rem;
+        margin-block: 0.5rem;
+      }
+      .header__brief {
+        justify-self: center;
+        align-self: center;
+        grid-area: 2 / 1 / span 1 / span 2;
+        margin-bottom: 0.5rem;
+      }
+    }
+    .header__right {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      .header__feel {
+        font-size: 1.25rem;
+        margin-block: 0.5rem;
+      }
+    }
+  }
+  .add-info-weather__day-light-hours {
+    width: 100% !important;
+    margin-inline: var(--brad);
+    margin-block: auto;
+
+    .sun-direct__svg {
+      width: 100% !important;
+      height: auto !important ;
+      aspect-ratio: 9/5;
+    }
+  }
 }

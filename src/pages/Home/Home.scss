@@ -1,18 +1,22 @@
 @import '../../styles/shared.scss';
 
+header {
+    padding-inline: var(--brad);
+}
+
 .geolocation__block {
     @extend .block;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem;
+    padding: var(--brad);
 }
 
 .cities__block {
     @extend .block;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: var(--brad);
 
     .cities__city-name{
         margin: auto;
@@ -29,11 +33,11 @@
 
         img {
             height: 24rem;
-            border-radius: 1.5rem;
+            border-radius: var(--brad);
             @extend .nonselectable;
         }
         svg {
-            margin: 1.5rem;
+            margin: var(--brad);
             border-radius: 50%;
             height: 4rem;
             box-shadow: $shadow;
@@ -61,5 +65,46 @@
     }
 }
 @media (max-width: 808px) {
-   
+    .cities__remote {
+        img {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        svg {
+            margin: 0 !important;
+            height: 3rem !important;
+            z-index: 1;
+        }
+        .cities__right-button {
+            margin-left: -4rem !important;
+            
+        }
+        .cities__left-button {
+            margin-right: -4rem !important;
+    
+        }
+    }
+}
+@media (max-width: 648px) {
+    .cities__block{
+        padding: 0;
+        padding-bottom: var(--brad);
+        .cities__remote {
+            img {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            svg {
+                height: 2.75rem !important;
+            }
+            .cities__right-button {
+                margin-left: -5rem !important;
+                
+            }
+            .cities__left-button {
+                margin-right: -5rem !important;
+        
+            }
+        }
+    }
 }

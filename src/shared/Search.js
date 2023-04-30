@@ -1,12 +1,10 @@
 import { AsyncPaginate } from "react-select-async-paginate";
 import { geoApiOptions, GEO_API_URL } from "../api/geoDB";
 import { useNavigate } from "react-router-dom";
-//import { useMediaQuery } from "@material-ui/core";
+import {useEffect , useState} from "react"
 
 const Search = ( {isHome = true} ) => {
   const navigate = useNavigate();
-  console.log("isHome: ");
-  console.log(isHome);
 
   const loadOptions = (inputValue) => {
     return fetch(GEO_API_URL + inputValue + "&limit=10", geoApiOptions)
@@ -35,13 +33,30 @@ const Search = ( {isHome = true} ) => {
     });
   };
 
+  const [isMaxWidth_808, setIsMaxWidth_808] = useState(false);
+  const [isMaxWidth_648, setIsMaxWidth_648] = useState(false);
+  const [isMaxWidth_484, setIsMaxWidth_484] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMaxWidth_808(window.innerWidth <= 808);
+      setIsMaxWidth_648(window.innerWidth <= 648);
+      setIsMaxWidth_484(window.innerWidth <= 484);
+    }
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const searchCityStyles = {
     control: (styles) => ({
       ...styles,
       backgroundColor: "white",
-      fontSize: "1.75rem",
-      borderRadius: "1.5rem",
-      minHeight: "4.5rem",
+      fontSize: isMaxWidth_648 ? "1.25rem" : "1.75rem",
+      borderRadius: isMaxWidth_484 ? "1rem" : "1.5rem",
+      minHeight: isMaxWidth_648 ? "3.5rem" : "4.5rem",
     }),
     option: (styles, state) => ({
       ...styles,
@@ -51,7 +66,7 @@ const Search = ( {isHome = true} ) => {
     menu: (styles) => ({
       ...styles,
       padding: "0.5rem",
-      borderRadius: "1.5rem",
+      borderRadius: isMaxWidth_484 ? "1rem" : "1.5rem",
       borderWidth: "0px",
       backgroundColor: "rgba(0,0,0,0.4)",
       color: "white",
@@ -61,7 +76,7 @@ const Search = ( {isHome = true} ) => {
     }),
     menuList: (styles) => ({
       ...styles,
-      maxHeight: (isHome ? "11.25rem" : "15.25rem"),
+      maxHeight: (isHome ? (isMaxWidth_648 ? "5rem" : (isMaxWidth_808 ? "7.25rem" : "8.5rem")) : (isMaxWidth_648 ? "10rem" : (isMaxWidth_808 ? "13.5rem" : "15.25rem"))),
 
       "&::-webkit-scrollbar": {
         width: "10px",

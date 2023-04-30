@@ -47,8 +47,6 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
     <div className="add-info-weather">
       <div className="add-info-weather__block--small">
         <svg
-          width="3.5rem"
-          height="3.5rem"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -70,8 +68,6 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
 
       <div className="add-info-weather__block--small">
         <svg
-          width="3.5rem"
-          height="3.5rem"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -106,8 +102,6 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
 
       <div className="add-info-weather__block--small">
         <svg
-          width="3.5rem"
-          height="3.5rem"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -131,8 +125,6 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
         <svg
           className="icon-medium"
           fill="#000000"
-          height="3.5rem"
-          width="3.5rem"
           version="1.1"
           id="Layer_1"
           viewBox="0 0 512 512"
