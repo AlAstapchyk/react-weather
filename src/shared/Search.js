@@ -34,8 +34,8 @@ const Search = ({ isHome = true }) => {
   };
 
   const [isMaxWidth_808, setIsMaxWidth_808] = useState(false);
-  const [isMaxWidth_648, setIsMaxWidth_648] = useState(false);
-  const [isMaxWidth_468, setIsMaxWidth_484] = useState(false);
+  const [isMaxWidth_664, setIsMaxWidth_664] = useState(false);
+  const [isMaxWidth_500, setIsMaxWidth_500] = useState(false);
   const menuHeight = [
     ["8.5rem", "15.25rem"],
     ["7.25rem", "13.5rem"],
@@ -48,12 +48,12 @@ const Search = ({ isHome = true }) => {
   const handleResize = useCallback(() => {
     const windowWidth = window.innerWidth;
     const newMenuHeightIndex =
-      windowWidth <= 468 ? 3 : windowWidth <= 648 ? 2 : windowWidth <= 808 ? 1 : 0;
+      windowWidth <= 500 ? 3 : windowWidth <= 664 ? 2 : windowWidth <= 808 ? 1 : 0;
     setMenuHeightIndex(newMenuHeightIndex);
 
     setIsMaxWidth_808(windowWidth <= 808);
-    setIsMaxWidth_648(windowWidth <= 648);
-    setIsMaxWidth_484(windowWidth <= 468);
+    setIsMaxWidth_664(windowWidth <= 664);
+    setIsMaxWidth_500(windowWidth <= 500);
   }, []);
 
   useEffect(() => {
@@ -66,24 +66,24 @@ const Search = ({ isHome = true }) => {
     control: (styles) => ({
       ...styles,
       backgroundColor: "white",
-      fontSize: isMaxWidth_648 ? "1.25rem" : "1.75rem",
-      borderRadius: isMaxWidth_468 ? "1rem" : "1.5rem",
-      minHeight: isMaxWidth_648 ? "3.5rem" : "4.5rem",
+      fontSize: isMaxWidth_664 ? "1.25rem" : "1.75rem",
+      borderRadius: isMaxWidth_500 ? "1rem" : "1.5rem",
+      minHeight: isMaxWidth_664 ? "3.5rem" : "4.5rem",
     }),
     option: (styles, state) => ({
       ...styles,
-      borderRadius: isMaxWidth_468 ? "0.75rem" : "1rem",
+      borderRadius: isMaxWidth_500 ? "0.75rem" : "1rem",
       backgroundColor: state.isFocused && "black",
     }),
     menu: (styles) => ({
       ...styles,
       padding: "0.5rem",
-      borderRadius: isMaxWidth_468 ? "1rem" : "1.5rem",
+      borderRadius: isMaxWidth_500 ? "1rem" : "1.5rem",
       borderWidth: "0px",
       backgroundColor: "rgba(0,0,0,0.4)",
       color: "white",
       textShadow: "2px 2px black",
-      fontSize: isMaxWidth_648 ? "1rem" : "1.25rem",
+      fontSize: isMaxWidth_664 ? "1rem" : "1.25rem",
       paddingRight: "0px",
     }),
     menuList: (styles) => ({

@@ -85,7 +85,7 @@ header {
         }
     }
 }
-@media (max-width: 648px) {
+@media (max-width: 664px) {
     .cities__block{
         padding: 0;
         padding-bottom: var(--brad);
@@ -109,7 +109,7 @@ header {
     }
 }
 
-@media (max-width: 468px) {
+@media (max-width: 500px) {
     header {
         height: 7.5rem;
         display: flex;

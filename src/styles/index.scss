@@ -1,5 +1,5 @@
-@import '~normalize.css';
-@import './shared.scss';
+@import "~normalize.css";
+@import "./shared.scss";
 
 p {
   margin-block: 1rem;
@@ -36,8 +36,8 @@ body {
     height: 5px;
     border-radius: 10px;
   }
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -57,12 +57,16 @@ body {
 @media (max-width: 1050px) {
   .body__container {
     max-width: 808px;
-    margin-inline: 50px;
     margin-inline: auto;
   }
 }
-@media (max-width: 648px) {
-  p{
+@media (max-width: 808px) {
+  .body__container {
+    margin-inline: var(--gap);
+  }
+}
+@media (max-width: 664px) {
+  p {
     margin-block: 0.8rem;
   }
   .body__container {
