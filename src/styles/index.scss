@@ -22,20 +22,6 @@ body {
   margin: 0;
   font-size: 1.25rem;
 
-  &::-webkit-scrollbar {
-    overflow-x: scroll;
-    height: 10px;
-    background-color: rgba(0, 0, 0, 0);
-  }
-  &::-webkit-scrollbar-track {
-    padding: 0 20px;
-    margin: 0 20px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: white;
-    height: 5px;
-    border-radius: 10px;
-  }
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { shuffle } from "lodash";
 import { useNavigate } from "react-router-dom";
 
@@ -146,11 +146,12 @@ const Cities = () => {
       longitude: 2.159,
     },
   ];
-
+  const refMainDiv = useRef();
   const [randomNumbers, setRandomNumbers] = useState([]);
   useEffect(() => {
     const numbers = Array.from(citiesArr, (_, index) => index);
     setRandomNumbers(shuffle(numbers));
+    refMainDiv.current.className += " to-left";
   }, []);
 
   const navigate = useNavigate();
@@ -178,7 +179,7 @@ const Cities = () => {
   };
 
   return (
-    <div className="cities__block">
+    <div className="cities__block from-right" ref={refMainDiv}>
       <div className="cities__remote">
         <svg
           className="cities__left-button"

@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 const AdditionalInfo = ({ forecast, currentWeather }) => {
   const timePart = currentWeather.sys.sunset - currentWeather.sys.sunrise;
   const timePos = currentWeather.dt - currentWeather.sys.sunrise;
@@ -43,14 +45,16 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
     );
   };
 
+  const refMainDiv = useRef();
+
+  useEffect(() => {
+    refMainDiv.current.className += " to-left";
+  }, []);
+
   return (
-    <div className="add-info-weather">
+    <div className="add-info-weather from-right" ref={refMainDiv}>
       <div className="add-info-weather__block--small">
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="Environment / Water_Drop">
             <path
               id="Vector"
@@ -67,11 +71,7 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
       </div>
 
       <div className="add-info-weather__block--small">
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M3 8H10C11.6569 8 13 6.65685 13 5C13 3.34315 11.6569 2 10 2C8.34315 2 7 3.34315 7 5"
             stroke="white"
@@ -101,11 +101,7 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
       </div>
 
       <div className="add-info-weather__block--small">
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="File / Cloud">
             <path
               id="Vector"

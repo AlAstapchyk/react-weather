@@ -1,122 +1,122 @@
-@import '../../styles/shared.scss';
+@import "../../styles/shared.scss";
 
 header {
-    padding-inline: var(--brad);
+  padding-inline: var(--brad);
 }
 
 .geolocation__block {
-    @extend .block;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--brad);
+  @extend .block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--brad);
 }
 
 .cities__block {
-    @extend .block;
+  @extend .block;
+  display: flex;
+  flex-direction: column;
+  padding: var(--brad);
+
+  .cities__city-name {
+    margin: auto;
+  }
+  button {
+    margin: 0.75rem auto 0;
+  }
+
+  .cities__remote {
     display: flex;
-    flex-direction: column;
-    padding: var(--brad);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
 
-    .cities__city-name{
-        margin: auto;
+    img {
+      height: 24rem;
+      border-radius: var(--brad);
+      @extend .nonselectable;
     }
-    button {
-        margin: 0.75rem auto 0;
+    svg {
+      margin: var(--brad);
+      border-radius: 50%;
+      height: 4rem;
+      box-shadow: $shadow;
+      fill: white;
+
+      &:hover {
+        background-color: white;
+      }
+      &:active {
+        fill: black;
+      }
     }
-
-    .cities__remote {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-
-        img {
-            height: 24rem;
-            border-radius: var(--brad);
-            @extend .nonselectable;
-        }
-        svg {
-            margin: var(--brad);
-            border-radius: 50%;
-            height: 4rem;
-            box-shadow: $shadow;
-            fill: white;
-
-            &:hover {
-                background-color: white;
-            }
-            &:active {
-                fill: black;
-            }
-        }
-    }
+  }
 }
 
 @media (max-width: 1050px) {
-    .cities__remote {
-        img {
-            height: 20rem !important;
-        }
-        svg {
-            margin: 1.25rem !important;
-            height: 3.5rem !important;
-        }
+  .cities__remote {
+    img {
+      height: 20rem !important;
     }
+    svg {
+      margin: 1.25rem !important;
+      height: 3.5rem !important;
+    }
+  }
 }
 @media (max-width: 808px) {
-    .cities__remote {
-        img {
-            width: 100% !important;
-            height: 100% !important;
-        }
-        svg {
-            margin: 0 !important;
-            height: 3rem !important;
-            z-index: 1;
-        }
-        .cities__right-button {
-            margin-left: -4rem !important;
-            
-        }
-        .cities__left-button {
-            margin-right: -4rem !important;
-    
-        }
+  .cities__remote {
+    img {
+      width: 100% !important;
+      height: 100% !important;
     }
+    svg {
+      margin: 0 !important;
+      height: 3rem !important;
+      z-index: 1;
+    }
+    .cities__right-button {
+      margin-left: -4rem !important;
+    }
+    .cities__left-button {
+      margin-right: -4rem !important;
+    }
+  }
 }
 @media (max-width: 664px) {
-    .cities__block{
-        padding: 0;
-        padding-bottom: var(--brad);
-        .cities__remote {
-            img {
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
-            }
-            svg {
-                height: 2.75rem !important;
-            }
-            .cities__right-button {
-                margin-left: -5rem !important;
-                
-            }
-            .cities__left-button {
-                margin-right: -5rem !important;
-        
-            }
+  .cities__block {
+    padding: 0;
+    padding-bottom: var(--brad);
+    .cities__remote {
+      img {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      svg {
+        height: 2.75rem !important;
+
+        &:hover {
+          background-color: rgba($color: #000000, $alpha: 0) !important;
         }
+      }
+      .cities__right-button {
+        margin-left: -5rem !important;
+      }
+      .cities__left-button {
+        margin-right: -5rem !important;
+      }
     }
+  }
 }
 
 @media (max-width: 500px) {
-    header {
-        height: 7.5rem;
-        display: flex;
+  header {
+    height: 7.5rem;
+    display: flex;
 
-        .text--large {
-            align-self: center;
-            font-size: 1.75rem !important;
-        }
+    .text--large {
+      align-self: center;
+      font-size: 1.75rem !important;
     }
+  }
 }

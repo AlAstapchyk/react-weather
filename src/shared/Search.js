@@ -33,7 +33,6 @@ const Search = ({ isHome = true }) => {
     });
   };
 
-  const [isMaxWidth_808, setIsMaxWidth_808] = useState(false);
   const [isMaxWidth_664, setIsMaxWidth_664] = useState(false);
   const [isMaxWidth_500, setIsMaxWidth_500] = useState(false);
   const menuHeight = [
@@ -48,10 +47,15 @@ const Search = ({ isHome = true }) => {
   const handleResize = useCallback(() => {
     const windowWidth = window.innerWidth;
     const newMenuHeightIndex =
-      windowWidth <= 500 ? 3 : windowWidth <= 664 ? 2 : windowWidth <= 808 ? 1 : 0;
+      windowWidth <= 500
+        ? 3
+        : windowWidth <= 664
+        ? 2
+        : windowWidth <= 808
+        ? 1
+        : 0;
     setMenuHeightIndex(newMenuHeightIndex);
 
-    setIsMaxWidth_808(windowWidth <= 808);
     setIsMaxWidth_664(windowWidth <= 664);
     setIsMaxWidth_500(windowWidth <= 500);
   }, []);

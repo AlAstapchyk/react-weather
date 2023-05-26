@@ -1,3 +1,5 @@
+import { useRef, useEffect } from "react";
+
 const Header = ({ currentWeather }) => {
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const months = [
@@ -25,17 +27,26 @@ const Header = ({ currentWeather }) => {
       months[date.getMonth() + 1]
     );
   };
+  const refHeader = useRef();
+
+  useEffect(() => {
+    refHeader.current.className += " to-top";
+  }, []);
 
   return (
     <>
-      <div className="header">
+      <div className="header from-bottom" ref={refHeader}>
         <div className="header__left">
           <p className="text--large header__place">
             {currentWeather.name ? currentWeather.name + ", " : "Unknown"}{" "}
             {currentWeather.sys.country}
           </p>
-          <p className="text--large header__date">{printDate(currentWeather.dt)}</p>
-          <p className="text--large header__brief">{currentWeather.weather[0].main}</p>
+          <p className="text--large header__date">
+            {printDate(currentWeather.dt)}
+          </p>
+          <p className="text--large header__brief">
+            {currentWeather.weather[0].main}
+          </p>
         </div>
         <div className="header__right">
           <p className="text--superlarge header__temp">

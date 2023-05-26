@@ -1,8 +1,15 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const refFooter = useRef();
+
+  useEffect(() => {
+    refFooter.current.className += " to-top";
+  }, []);
+
   return (
-    <footer>
+    <footer calssName="from-bottom" ref={refFooter}>
       <Link to="/react-weather">Home page</Link>
 
       <div className="rights" align="center">

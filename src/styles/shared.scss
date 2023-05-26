@@ -163,3 +163,39 @@ footer {
     }
   }
 }
+.from-top {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 500ms ease-in, transform 500ms ease-out;
+}
+.to-bottom {
+  opacity: 1;
+  transform: translateY(0);
+}
+.from-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 500ms ease-in, transform 500ms ease-out;
+}
+.to-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+.from-right {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 500ms ease-in, transform 500ms ease-out;
+}
+.to-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+.from-bottom {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 500ms ease-in, transform 500ms ease-out;
+}
+.to-top {
+  opacity: 1;
+  transform: translateY(0);
+}

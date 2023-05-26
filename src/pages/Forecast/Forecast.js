@@ -7,6 +7,7 @@ import AdditionalInfo from "./components/AdditionalInfo";
 import Footer from "../../shared/Footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import AboveBlock from "../../shared/AboveBlock";
 
 function Forecast() {
   const { currentWeather, forecast, fetchData } = WeatherData();
@@ -21,7 +22,7 @@ function Forecast() {
 
   return (
     <>
-      <Search isHome={false}/>
+      <Search isHome={false} />
 
       {currentWeather != null && currentWeather != null && (
         <>
@@ -29,7 +30,7 @@ function Forecast() {
 
           <DayForecast forecast={forecast} currentWeather={currentWeather} />
 
-          <p className="above-block">ADDITIONAL INFO</p>
+          <AboveBlock>ADDITIONAL INFO</AboveBlock>
           <AdditionalInfo forecast={forecast} currentWeather={currentWeather} />
         </>
       )}
