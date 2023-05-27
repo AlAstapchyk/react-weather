@@ -151,7 +151,7 @@ const Cities = () => {
   useEffect(() => {
     const numbers = Array.from(citiesArr, (_, index) => index);
     setRandomNumbers(shuffle(numbers));
-    refMainDiv.current.className += " to-left";
+    refMainDiv.current.className += " to-top";
   }, []);
 
   const navigate = useNavigate();
@@ -179,7 +179,7 @@ const Cities = () => {
   };
 
   return (
-    <div className="cities__block from-right" ref={refMainDiv}>
+    <div className="cities__block from-bottom" ref={refMainDiv}>
       <div className="cities__remote">
         <svg
           className="cities__left-button"

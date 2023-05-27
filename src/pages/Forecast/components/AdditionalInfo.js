@@ -48,11 +48,11 @@ const AdditionalInfo = ({ forecast, currentWeather }) => {
   const refMainDiv = useRef();
 
   useEffect(() => {
-    refMainDiv.current.className += " to-left";
+    refMainDiv.current.className += " to-top";
   }, []);
 
   return (
-    <div className="add-info-weather from-right" ref={refMainDiv}>
+    <div className="add-info-weather from-bottom" ref={refMainDiv}>
       <div className="add-info-weather__block--small">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="Environment / Water_Drop">

@@ -9,7 +9,7 @@ const DayForecast = ({ forecast, currentWeather }) => {
   const refMainDiv = useRef();
 
   useEffect(() => {
-    refMainDiv.current.className += " to-right";
+    refMainDiv.current.className += " to-top";
   }, []);
 
   const separator = (_date) => {
@@ -60,7 +60,7 @@ const DayForecast = ({ forecast, currentWeather }) => {
   };
 
   return (
-    <div className="day-forecast__block from-left" ref={refMainDiv}>
+    <div className="day-forecast__block from-bottom" ref={refMainDiv}>
       <div className="horizontal-view">
         <div className="day-forecast__pack" key="200">
           {separator("Today")}

@@ -6,7 +6,7 @@ const Geolocation = () => {
   const refMainDiv = useRef();
 
   useEffect(() => {
-    refMainDiv.current.className += " to-right";
+    refMainDiv.current.className += " to-top";
   }, []);
 
   const findGeolocation = () => {
@@ -26,7 +26,7 @@ const Geolocation = () => {
   };
 
   return (
-    <div className="geolocation__block from-left" ref={refMainDiv}>
+    <div className="geolocation__block from-bottom" ref={refMainDiv}>
       <p className="text--big" align="center">
         Enter the name of the city in the search bar or give permission to
         process your geodata.
